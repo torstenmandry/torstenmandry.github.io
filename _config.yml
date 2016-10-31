@@ -16,11 +16,13 @@
 title: Torsten Mandry
 email: torsten@mandry-online.de
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Als Architekt, Entwickler und Berater unterstütze ich meine Arbeitgeber
+  und Kunden seit mehr als 15 Jahren beim Entwurf und der Entwicklung von
+  leichtgewichtigen Enterprise-Anwendungen auf Basis von Java und Web-Technologien.
+  In diesem Blog halte ich bei Gelegenheit Erkenntnisse aus meinen Projekten fest.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://torstenmandry.github.io" # the base hostname & protocol for your site
+# url: "http://torstenmandry.github.io" # the base hostname & protocol for your site
+url: "http://localhost:4000"
 repository: "torstenmandry/torstenmandry.github.io.git"
 twitter_username: torstenmandry
 github_username:  torstenmandry
