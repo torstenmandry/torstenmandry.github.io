@@ -6,7 +6,8 @@ Meine persönliche Github Page
 
 Unter Windows mit "Portable Jekyll"
 
-see https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/
+siehe https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/
+und https://github.com/madhur/PortableJekyll/wiki
 
 * Windows cmd starten
 * ins Installationsverzeichnis von Portable Jekyll wechseln
