@@ -13,5 +13,5 @@ und https://github.com/madhur/PortableJekyll/wiki
 * ins Installationsverzeichnis von Portable Jekyll wechseln
 * setup.cmd ausführen
 * ins Root-Verzeichnis des Projektes wechseln
-* bundle exec jekyll serve
+* bundle exec jekyll serve bzw. npm jekyll serve ausführen
 
