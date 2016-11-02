@@ -1,9 +1,9 @@
 # main text of home
 name: Torsten Mandry
-bio: Software Craftsman, Architect, Clean Coder, API Fetishist, Politics Allergic
+bio: Software Craftsman, Architekt, Clean Coder, API-Fetischist, Politik-Allergiker
 
 # twitter summary info
-description: A blog about technology and stuff related
+description: In meinem Blog versuche ich von Zeit zu Zeit Erkenntnisse und Lösungsansätze aus meinen Projekten für die Nachwelt (nicht zuletzt aber auch für mich) festzuhalten.
 
 # if it's an external image, update below for true
 # better with square images
@@ -47,7 +47,7 @@ email: torsten@mandry-online.de
 authors:
     torstenmandry:
         name: Torsten Mandry
-        bio: Software Craftsman, Architect, Clean Coder, API Fetishist, Politics Allergic
+        bio: Software Craftsman, Architekt, Clean Coder, API-Fetischist, Politik-Allergiker
         external-image: false
         picture: assets/images/profile.jpg
         twitter: torstenmandry

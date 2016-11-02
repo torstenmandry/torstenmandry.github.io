@@ -4,43 +4,21 @@ layout: page
 ---
 ![Profile Image]({{ site.url }}/{{ site.picture }})
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<h1>Torsten Mandry</h1>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Seit mittlerweile über 15 Jahren verdiene ich mein Geld als Software 
+Architect, Entwickler und Coach. Mein Schwerpunkt liegt dabei auf dem 
+Entwurf und der Entwicklung von leichtgewichtigen Enterprise Anwendungen 
+im Java und Web Umfeld.</p>
 
-<h2>Skills</h2>
+<p>Ich verstehe mich als Software Craftsman. Als solcher lege ich nicht
+nur Wert darauf die an mich herangetragenen Probleme richtig zu lösen, 
+sondern auch die richtigen Probleme zu lösen. Ich bin ein 
+leidenschaftlicher Verfechter von Clean Code und bekennender API 
+Fetischist. Außerdem bin ich allergisch gegen Politik. Ich habe mehrfach
+die Erfahrung gemacht, dass der gesunde Menschenverstand auf der Strecke
+bleibt, sobald Politik ins Spiel kommt.</p>
 
-<ul class="skill-list">
-	<li>HTML - Jade - Haml - Erb</li>
-	<li>Responsive (Mobile First)</li>
-	<li>CSS (Stylus, Sass, Less)</li>
-	<li>Css Frameworks (Bootstrap, Foundation)</li>
-	<li>Javascript (Design Patterns, Testes)</li>
-	<li>NodeJS</li>
-	<li>AngularJS - ReactJS</li>
-	<li>Grunt - Gulp - Yeoman</li>
-	<li>Git</li>
-	<li>PHP</li>
-	<li>Python</li>
-	<li>MySQL - MongoDB</li>
-	<li>Scrum and Kanban</li>
-	<li>TDD e Continuous Integration</li>
-</ul>
-
-<h2>Projects</h2>
-
-<ul>
-	<li><a href="https://github.com/">Lorem Lorem</a></li>
-	<li><a href="https://github.com/">Ipsum Dolor</a></li>
-	<li><a href="https://github.com/">Dolor Lorem</a></li>
-</ul>
+<p>In meinem Blog versuche ich von Zeit zu Zeit Erkenntnisse und 
+Lösungsansätze aus meinen Projekten für die Nachwelt (nicht zuletzt aber
+auch für mich) festzuhalten.</p>
