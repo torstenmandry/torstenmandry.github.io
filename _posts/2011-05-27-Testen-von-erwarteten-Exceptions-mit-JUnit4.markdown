@@ -59,6 +59,4 @@ Zeitspanne angegeben werden, nach welcher der Test mit einem Fehler
 abgebrochen wird. Sicherlich auch nicht falsch, das zu wissen.
 
 Ergänzung: Ab JUnit 4.7 geht das ganze noch eleganter mit der 
-ExpectedException Rule (siehe Blog-Post von Alex Ruiz [1]). 
-
-[1]: http://alexruiz.developerblogs.com/?p=1530
+ExpectedException Rule (siehe [Blog-Post von Alex Ruiz](http://alexruiz.developerblogs.com/?p=1530)). 
