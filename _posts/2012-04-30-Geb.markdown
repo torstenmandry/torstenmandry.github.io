@@ -1,0 +1,211 @@
+---
+title: "Geb"
+layout: post
+date: 2012-04-30
+image: /assets/images/markdown.jpg
+headerImage: false
+tag:
+- grovvy
+- grails
+- geb
+- spock
+- selenium/webdriver
+- testing
+- ui testing
+blog: true
+author: torstenmandry
+description:  
+
+---
+
+Was ist Geb?
+------------
+
+Geb ist ein Automatisierungswerkzeug für Web-Oberflächen (Very Groovy 
+Browser automation) mit einem Fokus auf einfache/intuitive Entwicklung.
+
+Es vereinigt:
+
+* die Stärke/Mächtigkeit von WebDriver
+* die Eleganz/Einfachheit von JQuery Content Selection
+* die Robustheit des Page Object Modellings
+* die Ausdrucksstärke von Groovy
+
+Geb ist nicht ausschließlich ausgelegt auf Oberflächen-Tests, wird 
+jedoch überwiegend dafür eingesetzt. Es lässt sich mit unterschiedlichen 
+Test-Frameworks integrieren (z.B. JUnit, TestNG), die Autoren empfehlen 
+jedoch Geb zusammen mit Spock zu verwenden.
+
+Ressourcen
+----------
+
+* [Geb Homepage][1]
+* [The book of Geb][2] 
+* [Sourcen auf github][3]
+
+Code Beispiele
+--------------
+
+Alle Beispiele testen den Web 2.0 Taschenrechner
+
+Der vollständige Source-Code liegt auf github.
+
+### Einfacher Test ohne Verwendung eines Page-Objects
+
+{% highlight groovy %}
+def "Addition von 1 und 2 ergibt 3 - ohne Page Object"() {
+    given:
+    go "http://web2.0rechner.de/"
+ 
+    expect:
+    title == "Web 2.0 Taschenrechner"
+ 
+    when:
+    $("a#num_1").click()
+    $("a#A42").click()
+    $("a#num_2").click()
+    $("a#btn_equal").click()
+ 
+    then:
+    $("input#input").value() == "3"
+}
+{% endhighlight %}
+
+Ablauf:
+
+* Der Taschenrechner wird über seine URL aufgerufen
+* Es wird geprüft/erwartet, dass die Taschenrechner-Seite angezeigt wird 
+(über den Seiten-Titel)
+* Es werden nacheinander die Tasten "1", "+", "2" und "=" geklickt
+* Es wird geprüft/erwartet, dass in der Anzeige der Wert "3" erscheint
+
+Der Test liest sich wie ein typisches Automatisierungsskript. Sehr viele 
+Details (URL, Seitentitel, CSS-IDs von Seitenelementen) stehen im Test.
+
+### Der selbe Test mit Verwendung eines Page-Objects
+
+{% highlight groovy %}
+def "Addition von 1 und 2 ergibt 3 - mit Page Object"() {
+    given:
+    to TaschenrechnerPage
+ 
+    expect:
+    at TaschenrechnerPage
+ 
+    when:
+    btn_1.click()
+    btn_add.click()
+    btn_2.click()
+    btn_equals.click()
+ 
+    then:
+    display.value() == "3"
+}
+
+class TaschenrechnerPage extends Page {
+ 
+    static url = "http://web2.0rechner.de/"
+ 
+    static at = { title == "Web 2.0 Taschenrechner" }
+ 
+    static content = {
+        btn_1 { $("a#num_1") }
+        btn_2 { $("a#num_2") }
+        btn_add { $("a#A42") }
+        btn_equals { $("a#btn_equal") }
+        display { $("input#input") }
+    }
+}
+{% endhighlight %}
+
+Das Page-Object kapselt die Details (URL, Seitentitel, Lookup von 
+Seitenelementen). Der Test beschreibt Ablauf und erwartetes Ergebnis.
+
+### Weitere Verfeinerung hin zur funktionalen Spezifikation
+
+{% highlight groovy %}
+def "Addition von 1 und 2 ergibt 3 - funktional"() {
+    given:
+    to TaschenrechnerPage
+ 
+    expect:
+    at TaschenrechnerPage
+ 
+    when:
+    calculate("1+2")
+ 
+    then:
+    result == "3"
+}
+
+class TaschenrechnerPage extends Page {
+ 
+    static url = "http://web2.0rechner.de/"
+ 
+    static at = { title == "Web 2.0 Taschenrechner" }
+ 
+    static content = {
+        btn { char c -> $("a#" + ids[c.toString()]) }
+        result { display.value() }
+    }
+ 
+    def ids = [
+            "1" : "num_1",
+            "2" : "num_2",
+            "3" : "num_3",
+            "4" : "num_4",
+            "5" : "num_5",
+            "6" : "num_6",
+            "7" : "num_7",
+            "8" : "num_8",
+            "9" : "num_9",
+            "+" : "A42",
+            "=" : "btn_equal"
+    ]
+ 
+    def calculate( String formula ) {
+        formula.chars.each {
+            type it
+        }
+        type('=' as char)
+    }
+     
+    def type( char character ) {
+        btn(character).click()
+    }
+}
+{% endhighlight %}
+
+Auch Details zur Verwendung der Seite (wie wird eine Addition ausgeführt) 
+werden im Page-Object gekapselt. Der Test wird zur ausführbaren Spezifikation.
+
+### Verallgemeinerung mit Hilfe von Spock Data Tables
+
+{% highlight groovy %}
+@Unroll("#formula ergibt #expectedResult")
+def "Addition von zwei Zahlen"() {
+    given:
+    to TaschenrechnerPage
+ 
+    expect:
+    at TaschenrechnerPage
+ 
+    when:
+    calculate(formula)
+ 
+    then:
+    result == expectedResult
+ 
+    where:
+    formula | expectedResult
+    "1+2"   | "3"
+    "2+3"   | "6"
+    "3+4"   | "7"
+    "4+5"   | "9"
+    "5+6"   | "11"
+}
+{% endhighlight %}
+
+[1]: http://www.gebish.org/
+[2]: http://www.gebish.org/manual/current/
+[3]: https://github.com/bobbyout/getting-started-with-geb-and-spock
