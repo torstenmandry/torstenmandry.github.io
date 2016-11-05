@@ -2,8 +2,23 @@
 title: About
 layout: page
 ---
-![Profile Image]({{ site.url }}/{{ site.picture }})
 
+<div id="slider" style="width: 50%; margin: 0 25%">
+    <img alt="Profile Image" src="{{ site.url }}/{{ site.picture }}"/>
+    <img alt="Profile Image" src="{{ site.url }}/assets/images/profile2.jpg"/>
+    <img alt="Profile Image" src="{{ site.url }}/assets/images/profile3.jpg"/>
+</div>
+
+<script> 
+	var slider = new IdealImageSlider.Slider({ 
+		selector: '#slider', 
+		height: '1:1',
+		interval: 6000,
+		transitionDuration: 1000
+	}); 
+	slider.start(); 
+</script>
+ 
 <h1>Torsten Mandry</h1>
 
 <p>Seit mittlerweile über 15 Jahren verdiene ich mein Geld als Software 

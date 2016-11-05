@@ -24,8 +24,12 @@ layout: compress
     {{ scss_sheet | scssify }}
     </style>
 
+    <!-- Slider CSS -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/plugins/ideal-image-slider/ideal-image-slider.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/plugins/ideal-image-slider/themes/default/default.css">
 </head>
 <body>
+    <script src="{{ site.baseurl }}/plugins/ideal-image-slider/ideal-image-slider.js"></script>
 
     <div class="wrapper-{% if site.width == "normal" %}normal{% elsif site.width == "large" %}large{% endif %}">
         {% if page.tag %}
