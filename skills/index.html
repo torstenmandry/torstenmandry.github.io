@@ -1,0 +1,73 @@
+---
+title: Skills
+layout: compress
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+
+    <meta name=description content="{{ site.bio }}">
+    <meta name=author content="{{ site.name }}">
+
+    {% seo %}
+
+    {% include favicon.html %}
+
+    <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html','' }}">
+
+    <style>
+        {% capture scss_sheet %}{% include style.scss %}{% endcapture %}
+        {{ scss_sheet | scssify }}
+    </style>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/protovis-3.2/protovis-d3.2.js"></script>
+    <script type="text/javascript" charset="utf-8" src="utils.js"></script>
+    <script type="text/javascript" charset="utf-8" src="lib/lodash.underscore.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="radars/skills.js"></script>
+
+    <style type="text/css" media="screen">
+
+        #fig {
+            height: 1000px;
+            width: 1200px;
+        }
+
+    </style>
+    <script type="text/javascript" src="radar.js" charset="utf-8"></script>
+
+</head>
+
+<body onload="init(h,w);">
+
+<div class="page {{ page.title | downcase }}">
+
+    <header class="header-home {% if site.animation %}animated{% endif %}">
+        <h1 class="title">{{ page.title }} - {{ site.name }}</h1>
+    </header>
+
+    {% include nav.html %}
+
+    <div id="radar"></div>
+
+    <footer class="footer-main">
+        {{ site.name }} © {{ site.time | date: '%Y' }} <a class="link" href="{{ site.url }}/feed.xml" target="_blank"><svg class="icon icon-rss"><use xlink:href="#icon-rss"></use></svg></a>
+
+        <p class="extra">
+            Build with <a class="link" href="https://github.com/bdargan/techradar">TechRadar</a>
+            by <a class="link" href="https://github.com/bdargan">Brett Dargan</a>
+        </p>
+    </footer>
+
+</div>
+
+{% include icons.html %}
+
+{% include analytics-google.html %}
+
+</body>
+</html>
