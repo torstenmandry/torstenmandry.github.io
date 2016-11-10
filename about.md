@@ -21,19 +21,18 @@ layout: page
  
 <h1>Torsten Mandry</h1>
 
-<p>Seit mittlerweile über 15 Jahren verdiene ich mein Geld als Software 
-Architect, Entwickler und Coach. Mein Schwerpunkt liegt dabei auf dem 
-Entwurf und der Entwicklung von leichtgewichtigen Enterprise Anwendungen 
-im Java und Web Umfeld.</p>
+<p>Softwareentwicklung ist für mich mehr als nur Code schreiben. Ich 
+liebe es fachliche Problemstellungen zu durchdringen und in möglichst 
+einfache Lösungen zu überführen. Eine leichtgewichtige Architektur, ein 
+klar strukturiertes und nachvollziehbares Design, sowie gut lesbarer und 
+verständlicher Code sind dabei von ebenso großer Bedeutung für mich wie 
+ein funktionierender und effizienter Entwicklungsprozess.</p>
 
-<p>Ich verstehe mich als Software Craftsman. Als solcher lege ich nicht
-nur Wert darauf die an mich herangetragenen Probleme richtig zu lösen, 
-sondern auch die richtigen Probleme zu lösen. Ich bin ein 
-leidenschaftlicher Verfechter von Clean Code und bekennender API 
-Fetischist. Außerdem bin ich allergisch gegen Politik. Ich habe mehrfach
-die Erfahrung gemacht, dass der gesunde Menschenverstand auf der Strecke
-bleibt, sobald Politik ins Spiel kommt.</p>
-
-<p>In meinem Blog versuche ich von Zeit zu Zeit Erkenntnisse und 
-Lösungsansätze aus meinen Projekten für die Nachwelt (nicht zuletzt aber
-auch für mich) festzuhalten.</p>
+<p>Ich verstehe mich als Software Craftsman. Als solcher lege ich großen 
+Wert auf die Qualität der von mir verantworteten Software, ohne dabei 
+die Wirtschaftlichkeit des Projektes aus den Augen zu verlieren. Agile 
+Prinzipien wie "inspect and adapt", "iteratives Vorgehen", 
+"testgetriebene Entwicklung" und "kontinuierliche Wertschöpfung" sind 
+für mich selbstverständlich. Neben der Arbeit im Projekt ist es mir 
+wichtig mein Wissen und meine Erfahrung fortlaufend zu erweitern und mit 
+anderen zu teilen.</p>
