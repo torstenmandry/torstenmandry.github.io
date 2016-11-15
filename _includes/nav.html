@@ -30,6 +30,12 @@
             {% endif %}
         {% endif %}
 
+        {% if page.title != "Publikationen" %}
+            <li class="item">
+                <a class="link" href="{{ site.url }}/publications">Publikationen</a>
+            </li>
+        {% endif %}
+
         {% if page.title != "Skills" %}
             <li class="item">
                 <a class="link" href="{{ site.url }}/skills">Skills</a>
