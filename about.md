@@ -25,7 +25,7 @@ layout: page
 liebe es fachliche Problemstellungen zu durchdringen und in möglichst 
 einfache Lösungen zu überführen. Eine leichtgewichtige Architektur, ein 
 klar strukturiertes und nachvollziehbares Design, sowie gut lesbarer und 
-verständlicher Code sind dabei von ebenso großer Bedeutung für mich wie 
+verständlicher Code sind dabei von ebenso großer Bedeutung für mich, wie 
 ein funktionierender und effizienter Entwicklungsprozess.</p>
 
 <p>Ich verstehe mich als Software Craftsman. Als solcher lege ich großen 
@@ -34,5 +34,5 @@ die Wirtschaftlichkeit des Projektes aus den Augen zu verlieren. Agile
 Prinzipien wie "inspect and adapt", "iteratives Vorgehen", 
 "testgetriebene Entwicklung" und "kontinuierliche Wertschöpfung" sind 
 für mich selbstverständlich. Neben der Arbeit im Projekt ist es mir 
-wichtig mein Wissen und meine Erfahrung fortlaufend zu erweitern und mit 
+wichtig, mein Wissen und meine Erfahrung fortlaufend zu erweitern und mit 
 anderen zu teilen.</p>
