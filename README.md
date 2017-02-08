@@ -11,7 +11,8 @@ und https://github.com/madhur/PortableJekyll/wiki
 
 * Windows cmd starten
 * ins Installationsverzeichnis von Portable Jekyll wechseln
-* setup.cmd ausführen
+* setpath.cmd ausführen
 * ins Root-Verzeichnis des Projektes wechseln
 * bundle exec jekyll serve bzw. npm jekyll serve ausführen
+* URL http://localhost:4000/ öffnen 
 
