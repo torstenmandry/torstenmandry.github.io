@@ -4,7 +4,19 @@ Meine persönliche Github Page
 
 # Vorgehen zum lokalen testen
 
-Unter Windows mit "Portable Jekyll"
+## Auf dem Mac
+
+    brew install ruby
+
+    sudo gem install jekyll
+
+    sudo gem install bundler
+
+    bundle update
+
+    jekyll serve
+
+## Unter Windows mit "Portable Jekyll"
 
 siehe https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/
 und https://github.com/madhur/PortableJekyll/wiki
@@ -14,5 +26,4 @@ und https://github.com/madhur/PortableJekyll/wiki
 * setpath.cmd ausführen
 * ins Root-Verzeichnis des Projektes wechseln
 * bundle exec jekyll serve bzw. npm jekyll serve ausführen
-* URL http://localhost:4000/ öffnen 
-
+* URL http://localhost:4000/ öffnen
