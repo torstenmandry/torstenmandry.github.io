@@ -1,12 +1,15 @@
 ---
 title: "Dependency Inversion Principle und Hexagonale Architektur"
 layout: post
-date: 2017-10-08 12:10
+date: 2017-10-08 10:10
 image: /assets/images/markdown.jpg
 headerImage: false
 tag:
-- ddd
 - design
+- dependency
+- decoupling
+- hexagonal
+- ddd
 blog: true
 author: torstenmandry
 description:  
