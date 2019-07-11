@@ -97,7 +97,7 @@ The Micrometer registry converts this into a Counter metric named `orders_create
 After restarting the sample app, we can open the graph page of the Prometheus web UI again to query our metric. Prometheus provides a query language called [*PromQL*][prometheus-promql] to do this. To query our Counter, we can just enter its name into the expression input field and execute the query. We get one result with the value 0 (ignore the attributes in the curly brackets for the moment, we will get to this later).
 
 <figure id="fig1">
-    <img src="fig1.png" alt="Figure 1" style="width: 600px;">
+    <img src="../assets/images/prometheus-counters/fig1.png" alt="Figure 1" style="width: 600px;">
     <figcaption>Figure 1 – query result for our counter metric</figcaption>
 </figure>
 
@@ -115,7 +115,7 @@ Refreshing the Prometheus query, we can see that the value increases as expected
 If we switch to the graph tab, we can see that the result isn't the single value we saw so far, but a vector of values over time (called *instant vector*). The graph shows how our counter increased so far. We can adjust the range that the graph should show (called the *graph range*) to the last 5 minutes, using the controls above the diagram. 
 
 <figure id="fig2">
-    <img src="fig2.png" alt="Figure 2" style="width: 600px;">
+    <img src="../assets/images/prometheus-counters/fig2.png" alt="Figure 2" style="width: 600px;">
     <figcaption>Figure 2 – graph displaying the instant vector of our counter</figcaption>
 </figure>
 
@@ -123,7 +123,7 @@ If we switch to the graph tab, we can see that the result isn't the single value
 If we go for a fresh cup of coffee and refresh this query after coming back a few minutes later, we will see that the value has further increased. We can also see which value it had at which point in time (e.g. 5 minutes ago where the graph starts) when we move the mouse pointer over the graph. 
 
 <figure id="fig3">
-    <img src="fig3.png" alt="Figure 3" style="width: 600px;">
+    <img src="../assets/images/prometheus-counters/fig3.png" alt="Figure 3" style="width: 600px;">
     <figcaption>Figure 3 – our counter graph after a few more minutes</figcaption>
 </figure>
 
@@ -192,14 +192,14 @@ rate(orders_created_total[5m]) * 60
 If we look at that orders/minute graph it looks like this: 
 
 <figure id="fig4">
-    <img src="fig4.png" alt="Figure 4" style="width: 600px;">
+    <img src="../assets/images/prometheus-counters/fig4.png" alt="Figure 4" style="width: 600px;">
     <figcaption>Figure 4 – graph displaying the created orders per minute within the last 5 minutes</figcaption>
 </figure>
 
 It looks a little strange at first glance, because the values seem to jump up and down. But if we look at the labels on the Y axis, we see that this is because Prometheus shortens the scale so that the whole graph is visible as detailed as possible. In our case it means that it only shows the area around the 12 orders/minute, because all values are within this area. If we increase the graph range to one hour, Prometheus zooms out to show how the rate increased from 0 (before we started increasing the counter) to 12. The resulting graph matches our expectations.
 
 <figure id="fig5">
-    <img src="fig5.png" alt="Figure 5" style="width: 600px;">
+    <img src="../assets/images/prometheus-counters/fig5.png" alt="Figure 5" style="width: 600px;">
     <figcaption>Figure 5 – graph displaying the created orders per minute within the last hour</figcaption>
 </figure>
 
@@ -209,11 +209,11 @@ So far, we've been using `5m` as the length of the range vector. You might be wo
 In our very simple example with its constant rate, this range does not make any difference. To see the effect it has, let's take a look at a real world example. The following two diagrams show exactly the same orders/minute metric. The only difference is the range that was used to calculate the average values. The first graph shows the `rate(orders_created_total[5m])` values, the second one the `rate(orders_created_total[1h])` values.
 
 <figure id="fig6a">
-    <img src="fig6a.png" alt="Figure 6a" style="width: 600px;">
+    <img src="../assets/images/prometheus-counters/fig6a.png" alt="Figure 6a" style="width: 600px;">
     <figcaption>Figure 6a – average orders per minute calculated based on 5m range</figcaption>
 </figure>
 <figure id="fig6b">
-    <img src="fig6b.png" alt="Figure 6b" style="width: 600px;">
+    <img src="../assets/images/prometheus-counters/fig6b.png" alt="Figure 6b" style="width: 600px;">
     <figcaption>Figure 6a – average orders per minute calculated based on 1h range</figcaption>
 </figure>
 
@@ -280,14 +280,14 @@ A *label* is an attribute of a metric (not only a counter) that has to be provid
 If we query our `orders_created_total` metric after restarting our sample app, we no longer see only one result but many. Within the curly brackets we ignored so far, we can see the keys and values of our three labels (the other two labels `job` and `instance` are automatically added by Prometheus when scraping the values from the several targets).
 
 <figure id="fig7">
-    <img src="fig7.png" alt="Figure 7" style="width: 600px;">
+    <img src="../assets/images/prometheus-counters/fig7.png" alt="Figure 7" style="width: 600px;">
     <figcaption>Figure 7 – query result for our labeled counter</figcaption>
 </figure>
 
 The reason why we see those multiple results is that for every metric (e.g. Counter) Prometheus creates a separate value vector (called *time series*) for every combination of label values. So, instead of simply getting an *instant vector* containing the values, what we really get when we query our simple metric is an *instant vector* containing one or many *time series* – each containing a vector of values for that particular counter and label values at the different instants. We can see the different time series more clearly when we switch to the graph again.
 
 <figure id="fig8">
-    <img src="fig8.png" alt="Figure 8" style="width: 600px;">
+    <img src="../assets/images/prometheus-counters/fig8.png" alt="Figure 8" style="width: 600px;">
     <figcaption>Figure 8 – graph showing the different time series of our labeled counter</figcaption>
 </figure>
 
@@ -298,7 +298,7 @@ Now, with these labels in place, let's have a look at our previous queries again
 If we execute our query to get the number of orders created within the last 5 minutes, we also receive separate results for the separate time series.
 
 <figure id="fig9">
-    <img src="fig9.png" alt="Figure 9" style="width: 600px;">
+    <img src="../assets/images/prometheus-counters/fig9.png" alt="Figure 9" style="width: 600px;">
     <figcaption>Figure 9 – increase query results for our labeled counter</figcaption>
 </figure>
 
@@ -323,7 +323,7 @@ sum(increase(orders_created_total[5m])) by (country)
 ```
 
 <figure id="fig10">
-    <img src="fig10.png" alt="Figure 10" style="width: 600px;">
+    <img src="../assets/images/prometheus-counters/fig10.png" alt="Figure 10" style="width: 600px;">
     <figcaption>Figure 10 – increase query result summed by country</figcaption>
 </figure>
 
@@ -333,7 +333,7 @@ As the result of this query we get two records, one for each country label value
 The other query we defined before, the average number of orders created per minute, can be used for multiple time series without needing any modification. As we would usually display it as a graph, it will just show the multiple time series out of the box. 
 
 <figure id="fig11">
-    <img src="fig11.png" alt="Figure 11" style="width: 600px;">
+    <img src="../assets/images/prometheus-counters/fig11.png" alt="Figure 11" style="width: 600px;">
     <figcaption>Figure 11 – graph displaying the created orders per minute for multiple time series</figcaption>
 </figure>
 
@@ -370,7 +370,7 @@ jvm_memory_used_bytes
 When we query this metric, we see the memory usage of our sample app over the time (differentiated by `area` and `id`).
 
 <figure id="fig12">
-    <img src="fig12.png" alt="Figure 12" style="width: 600px;">
+    <img src="../assets/images/prometheus-counters/fig12.png" alt="Figure 12" style="width: 600px;">
     <figcaption>Figure 12 – graph displaying the jvm_memory_used_bytes gauge</figcaption>
 </figure>
 
