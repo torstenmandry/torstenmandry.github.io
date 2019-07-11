@@ -13,7 +13,7 @@ author: torstenmandry
 description: 
 ---
 
-Ursprünglich veröffentlicht unter https://www.innoq.com/en/blog/prometheus-counters/
+Ursprünglich veröffentlicht auf [www.innoq.com](https://www.innoq.com/en/blog/prometheus-counters/)
 
 
 I recently had to setup a few monitoring dashboards in [Grafana][] based on a Prometheus data source. I focussed on a couple of already existing counter metrics. I assumed that those are the simplest metrics available and it should be easy to extract some meaningful numbers and graphs out of them. It turned out that I had underestimated the complexity of Prometheus Counters. It took me quite some time to understand what I have to do to get the numbers and graphs that I wanted. In this article, I want you to join me on my way to understand how Counters in Prometheus work and how to query them to get the right information.

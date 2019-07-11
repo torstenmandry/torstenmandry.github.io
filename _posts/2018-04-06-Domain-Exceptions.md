@@ -13,7 +13,7 @@ author: torstenmandry
 description: Gibt es fachliche Ausnahmen und ist es sinnvoll, diese als Exceptions zu modellieren?
 ---
 
-Ursprünglich veröffentlicht unter https://www.innoq.com/de/blog/domain-exceptions/
+Ursprünglich veröffentlicht auf [www.innoq.com](https://www.innoq.com/de/blog/domain-exceptions/)
 
 
 In jedem Softwaresystem kommt es zu Ausnahmesituationen. In der Regel handelt es sich um technische Ausnahmen, die in Java als Exceptions auftreten und behandelt werden. Gibt es aber auch fachliche Ausnahmen, also quasi "Domain Exceptions"? Und ist es sinnvoll, diese in Java als Exceptions zu modellieren? Einige Beispiele aus einem Kundenprojekt zeigen, dass dies häufig nicht der Fall ist.
