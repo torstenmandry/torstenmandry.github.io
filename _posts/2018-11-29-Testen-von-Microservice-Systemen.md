@@ -12,7 +12,7 @@ author: torstenmandry
 description: 
 ---
 
-Ursprünglich veröffentlicht unter https://www.innoq.com/de/blog/testen-von-microservice-systemen/
+Ursprünglich veröffentlicht auf [www.innoq.com](https://www.innoq.com/de/blog/testen-von-microservice-systemen/)
 
 
 Automatisiertes Testen ist in der Softwareentwicklung mittlerweile ein Standardvorgehen. Mit Hilfe von Unit Tests wird das korrekte Verhalten aller Einzelbausteine sichergestellt. Integrationstests prüfen das Zusammenspiel mehrerer (oder aller) Bausteine. Über End-2-End-Tests kann schließlich die gesamte Anwendung als Blackbox betrachtet und über ihre bereitgestellten Schnittstellen (UI, Rest API, Message Queue, ...) verifiziert werden.
